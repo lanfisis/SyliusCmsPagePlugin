@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace MonsieurBiz\SyliusCmsPagePlugin\Routing;
 
 use MonsieurBiz\SyliusCmsPagePlugin\Repository\PageRepositoryInterface;
+use Psr\Clock\ClockInterface;
 use Sylius\Calendar\Provider\DateTimeProviderInterface;
 use Sylius\Component\Channel\Context\ChannelContextInterface;
 use Sylius\Component\Channel\Context\ChannelNotFoundException;
@@ -48,7 +49,7 @@ final class PageSlugConditionChecker
         PageRepositoryInterface $pageRepository,
         ChannelContextInterface $channelContext,
         LocaleContextInterface $localeContext,
-        DateTimeProviderInterface $dateTimeProvider
+        ClockInterface $dateTimeProvider
     ) {
         $this->pageRepository = $pageRepository;
         $this->channelContext = $channelContext;

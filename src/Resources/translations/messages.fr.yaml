@@ -1,6 +1,7 @@
 monsieurbiz_cms_page:
   ui:
     pages: "Pages"
+    page: "Page"
     new_page: "Nouvelle page"
     edit_page: "Éditer une page"
     cms_content: "Contenus CMS"

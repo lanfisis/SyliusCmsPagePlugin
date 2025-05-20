@@ -10,13 +10,13 @@
 {% endif %}
 
 {% if data.isPublished(date()) %}
-    <span class="ui teal label" {% if publishInformationText %}title="{{ publishInformationText | raw | escape('html_attr') }}"{% endif %}>
-        <i class="checkmark icon"></i>
+    <span class="status status-blue" {% if publishInformationText %}title="{{ publishInformationText | raw | escape('html_attr') }}"{% endif %}>
+        {{ ux_icon('tabler:check') }}
         {{ 'sylius.ui.yes_label'|trans }}
     </span>
 {% else %}
-    <span class="ui red label" {% if publishInformationText %}title="{{ publishInformationText | raw | escape('html_attr') }}"{% endif %}>
-        <i class="remove icon"></i>
+    <span class="status status-red" {% if publishInformationText %}title="{{ publishInformationText | raw | escape('html_attr') }}"{% endif %}>
+        {{ ux_icon('tabler:x') }}
         {{ 'sylius.ui.no_label'|trans }}
     </span>
 {% endif %}
