@@ -35,7 +35,7 @@ class Page implements PageInterface
 
     protected ?int $id = null;
 
-    protected ?string $code;
+    protected ?string $code = null;
 
     /**
      * @var Collection<int, ChannelInterface>
