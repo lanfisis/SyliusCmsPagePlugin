@@ -24,9 +24,6 @@ final class MonsieurBizSyliusCmsPageExtension extends Extension implements Prepe
 {
     use PrependDoctrineMigrationsTrait;
 
-    /**
-     * @inheritdoc
-     */
     public function load(array $config, ContainerBuilder $container): void
     {
         $this->processConfiguration($this->getConfiguration([], $container), $config);

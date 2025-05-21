@@ -5,7 +5,7 @@ monsieurbiz_cms_page_show:
     defaults:
         _controller: monsieurbiz_cms_page.controller.page::showAction
         _sylius:
-            template: "@MonsieurBizSyliusCmsPagePlugin/Shop/Page/show.html.twig"
+            template: "@MonsieurBizSyliusCmsPagePlugin/shop/page/show.html.twig"
             repository:
                 method: findOneEnabledAndPublishedBySlugAndChannelCode
                 arguments:
