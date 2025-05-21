@@ -1,0 +1,18 @@
+{% extends '@SyliusShop/shared/layout/base.html.twig' %}
+
+{% set page_hook = 'monsieurbiz.page.index' %}
+{% set prefixes = [page_hook] %}
+
+{% block title %}
+    {% if page is not empty and page.metaTitle is not empty %}
+        {{ page.metaTitle }}
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-4 mb-5">
+        {% hook page_hook %}
+    </div>
+{% endblock %}

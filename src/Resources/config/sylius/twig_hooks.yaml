@@ -5,6 +5,12 @@ sylius_twig_hooks:
                 template: '@MonsieurBizSyliusCmsPagePlugin/shop/page/index/metatags.html.twig'
                 priority: 0
         'monsieurbiz.page.index':
+            breadcumbs:
+                template: '@MonsieurBizSyliusCmsPagePlugin/shop/page/index/breadcumbs.html.twig'
+                priority: 200
+            title:
+                template: '@MonsieurBizSyliusCmsPagePlugin/shop/page/index/title.html.twig'
+                priority: 100
             content:
                 template: '@MonsieurBizSyliusCmsPagePlugin/shop/page/index/content.html.twig'
                 priority: 0
