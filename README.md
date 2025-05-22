@@ -7,11 +7,12 @@
 [![Recipe Status](https://img.shields.io/github/actions/workflow/status/monsieurbiz/SyliusCmsPagePlugin/recipe.yaml?branch=master&label=recipes&logo=github)](https://github.com/monsieurbiz/SyliusCmsPagePlugin/actions?query=workflow%3ASecurity)
 [![Security Status](https://img.shields.io/github/actions/workflow/status/monsieurbiz/SyliusCmsPagePlugin/security.yaml?branch=master&label=security&logo=github)](https://github.com/monsieurbiz/SyliusCmsPagePlugin/actions?query=workflow%3ASecurity)
 
-This plugins allows you to add manage CMS pages using the Rich Editor.
+This plugins allows you to add manage CMS pages using the Rich Editor and the Media Manager.
 
-If you want to know more about our editor, see the [Rich Editor Repository](https://github.com/monsieurbiz/SyliusRichEditorPlugin)
+If you want to know more about our editor, see the [Rich Editor Plugin](https://github.com/monsieurbiz/SyliusRichEditorPlugin)
+If you want to know more about our editor, see the [Media Manager Plugin](https://github.com/monsieurbiz/SyliusRichEditorPlugin)
 
-![Example of CMS page creation](screenshots/demo.gif)
+![Example of CMS Page display](screenshots/front-example.png)
 
 ## Compatibility
 
@@ -103,13 +104,13 @@ bin/console doctrine:migrations:migrate
 
 ## Example of complete CMS Page
 
-### Admin form with preview
+### Admin grid
 
-![Admin full form](screenshots/full_back.jpg)
+![Admin grid](screenshots/admin-grid.png)
 
-### Front display
+### Admin form
 
-![Front full display](screenshots/full_front.jpg)
+![Admin form](screenshots/admin-form.png)
 
 ## Create custom elements
 
