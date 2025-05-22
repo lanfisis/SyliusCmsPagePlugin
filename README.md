@@ -9,7 +9,7 @@
 
 This plugins allows you to add manage CMS pages using the Rich Editor and the Media Manager.
 
-If you want to know more about our editor, see the [Rich Editor Plugin](https://github.com/monsieurbiz/SyliusRichEditorPlugin)
+If you want to know more about our editor, see the [Rich Editor Plugin](https://github.com/monsieurbiz/SyliusRichEditorPlugin)  
 If you want to know more about our editor, see the [Media Manager Plugin](https://github.com/monsieurbiz/SyliusRichEditorPlugin)
 
 ![Example of CMS Page display](screenshots/front-example.png)
