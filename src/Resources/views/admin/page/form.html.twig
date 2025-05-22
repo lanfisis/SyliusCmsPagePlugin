@@ -1,10 +1,10 @@
-{#{% if form is not defined %}#}
-{#    {% set form = hookable_metadata.context.form %}#}
-{#{% endif %}#}
+{% if form is not defined %}
+    {% set form = hookable_metadata.context.form %}
+{% endif %}
 
-{#{% if resource is not defined %}#}
-{#    {% set resource = hookable_metadata.context.resource|default(null) %}#}
-{#{% endif %}#}
+{% if resource is not defined %}
+    {% set resource = hookable_metadata.context.resource|default(null) %}
+{% endif %}
 
 {% form_theme form '@MonsieurBizSyliusCmsPagePlugin/admin/page/form_theme.html.twig' %}
 
