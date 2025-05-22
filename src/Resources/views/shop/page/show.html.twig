@@ -2,10 +2,11 @@
 
 {% set page_hook = 'monsieurbiz.page.index' %}
 {% set prefixes = [page_hook] %}
+{% set metaTitle = page.metaTitle ? page.metaTitle : page.title %}
 
 {% block title %}
-    {% if page is not empty and page.metaTitle is not empty %}
-        {{ page.metaTitle }}
+    {% if metaTitle is not empty %}
+        {{ metaTitle }}
     {% else %}
         {{ parent() }}
     {% endif %}
