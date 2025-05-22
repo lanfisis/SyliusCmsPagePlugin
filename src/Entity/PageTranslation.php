@@ -23,7 +23,7 @@ class PageTranslation extends AbstractTranslation implements PageTranslationInte
 
     protected ?string $content;
 
-    protected ?string $slug;
+    protected ?string $slug = null;
 
     protected ?string $metaTitle;
 
