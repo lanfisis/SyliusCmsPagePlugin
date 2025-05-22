@@ -17,9 +17,9 @@ If you want to know more about our editor, see the [Rich Editor Repository](http
 
 | Sylius Version | PHP Version     |
 |----------------|-----------------|
-| 1.12           | 8.1 - 8.2 - 8.3 |
-| 1.13           | 8.1 - 8.2 - 8.3 |
-| 1.14           | 8.1 - 8.2 - 8.3 |
+| 2.0            | 8.2 - 8.3       |
+
+ℹ️ For Sylius 1.x, see our [1.x branch](https://github.com/monsieurbiz/SyliusCmsPagePlugin/tree/1.x) and all 1.x releases.
 
 ## Installation
 
@@ -32,6 +32,8 @@ composer config --no-plugins --json extra.symfony.endpoint '["https://api.github
 ```bash
 composer require monsieurbiz/sylius-cms-page-plugin
 ```
+
+If you do not use the recipes : 
 
 Change your `config/bundles.php` file to add the line for the plugin : 
 
@@ -58,9 +60,25 @@ monsieurbiz_cms_page_admin:
     resource: "@MonsieurBizSyliusCmsPagePlugin/Resources/config/routing/admin.yaml"
     prefix: /%sylius_admin.path_name%
 
-monsieurbiz_cms_page_shop:
-    resource: "@MonsieurBizSyliusCmsPagePlugin/Resources/config/routing/shop.yaml"
-    prefix: /{_locale}
+# Show page
+monsieurbiz_cms_page_show:
+    path: /{_locale}/{slug}
+    methods: [GET]
+    requirements:
+        slug: .+
+        _locale: ^[A-Za-z]{2,4}(_([A-Za-z]{4}|[0-9]{3}))?(_([A-Za-z]{2}|[0-9]{3}))?$
+    defaults:
+        _controller: monsieurbiz_cms_page.controller.page::showAction
+        _sylius:
+            template: "@MonsieurBizSyliusCmsPagePlugin/shop/page/show.html.twig"
+            repository:
+                method: findOneEnabledAndPublishedBySlugAndChannelCode
+                arguments:
+                    - $slug
+                    - "expr:service('sylius.context.locale').getLocaleCode()"
+                    - "expr:service('sylius.context.channel').getChannel().getCode()"
+                    - "expr:service('monsieurbiz.cms_page.datetime_provider').now()"
+    condition: "not(context.getPathInfo() matches '
 ```
 
 ### Migrations
@@ -100,8 +118,8 @@ In order to do that, you can check the [Rich Editor custom element creation](htt
 
 ## SEO Friendly
 
-You can define for every page the meta title, meta description and meta 
-keywords.
+You can define for every page the meta title, meta description, meta 
+keywords and meta image.
 
 ## Troubleshooting
 
