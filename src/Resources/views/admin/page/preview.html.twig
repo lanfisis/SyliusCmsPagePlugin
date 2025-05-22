@@ -1,4 +1,3 @@
-{# This extends takes account of the potential theme template #}
 {% extends '@MonsieurBizSyliusCmsPagePlugin/shop/page/show.html.twig' %}
 
 {% block body %}
@@ -19,20 +18,4 @@
     </div>
 
     {{ parent() }}
-{% endblock %}
-
-{% block title %}{{ page.metaTitle }}{% endblock %}
-
-{% block metatags %}
-    {{ parent() }}
-    <meta property="og:type" content="page" />
-    {% if page.metaTitle is not empty %}
-        <meta property="og:title" content="{{ page.metaTitle }}"/>
-    {% endif %}
-    {% if page.metaDescription is not empty %}
-        <meta name="description" property="og:description" content="{{ page.metaDescription }}"/>
-    {% endif %}
-    {% if page.metaKeywords is not empty %}
-        <meta name="keywords" content="{{ page.metaKeywords }}"/>
-    {% endif %}
 {% endblock %}
