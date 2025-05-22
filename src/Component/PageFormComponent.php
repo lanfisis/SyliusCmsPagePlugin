@@ -37,6 +37,6 @@ class PageFormComponent
     #[LiveAction]
     public function generatePageSlug(SlugGeneratorInterface $slugGenerator, #[LiveArg] string $localeCode): void
     {
-        $this->formValues['translations'][$localeCode]['slug'] = $slugGenerator->generate($this->formValues['translations'][$localeCode]['title']);
+        $this->formValues['translations'][$localeCode]['slug'] = $slugGenerator->generate($this->formValues['translations'][$localeCode]['title'] ?? '');
     }
 }
